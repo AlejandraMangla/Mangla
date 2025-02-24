@@ -1,0 +1,330 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&family=Space+Grotesk&display=swap");
+
+/*Variables CSS*/
+:root {
+  --header-height: 3.5rem;
+  /*COLORS*/
+  /*COLORS MODE HSL*/
+
+  --white-color: #fff;
+  --body-color: hsl(220, 100%, 97%);
+
+  /*Font and typography*/
+  --body-font: "Montserrat", sans-serif;
+  --normal-font-size: 0.938rem;
+
+  /*Font weight*/
+  --font-regular: 400;
+  --font-semi-bold: 600;
+
+  /*z index*/
+  --z-tooltip: 10;
+  --z-fixed: 100;
+}
+/*Responsive typography*/
+@media screen and(min-width:1024px) {
+  :root {
+    --normal-font-size: 1rem;
+  }
+}
+/*===========BASE=============*/
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+header {
+  font-family: var(--body-font);
+  font-size: var(--normal-font-size);
+  background-color: var(--body-color);
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+/*=======REUSABLE CSS CLASSES=======*/
+.container {
+  max-width: 1120px;
+  margin-inline: 1.5rem;
+}
+
+/*==========HEADER======*/
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: var(--black-color);
+  z-index: var(--z-fixed);
+  padding: 0.5rem;
+}
+
+/*======NAV======*/
+.nav__logo,
+.nav__burger,
+.nav__logo,
+.nav__close {
+  color: var(--white-color);
+}
+
+.nav__data {
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav__logo {
+  display: inline-flex;
+  align-items: center;
+  column-gap: 0.25rem;
+  font-weight: var(--font-semi-bold);
+}
+
+.nav__logo i {
+  font-weight: initial;
+  font-size: 1.25rem;
+}
+
+.nav__toggle {
+  position: relative;
+  width: 32px;
+  height: 32px;
+}
+
+.nav__burger,
+.nav__close {
+  position: absolute;
+  width: max-content;
+  height: max-content;
+  inset: 0;
+  margin: auto;
+  font-size: 1.25rem;
+  cursor: pointer;
+  transition: opacity 0.1s, transform 0.4s;
+}
+
+.nav__close {
+  opacity: 0;
+}
+
+/*===============navigation for mobile devices=================*/
+@media screen and (max-width: 1118px) {
+  .nav__menu {
+    position: absolute;
+    left: 0;
+    top: 2.5rem;
+    width: 100%;
+    height: calc(100vh - 3.5rem);
+    overflow: auto;
+    pointer-events: none;
+    opacity: 0;
+    transition: top 0.4s, opacity 0.3s;
+  }
+  .nav__list {
+    background-color: var(--black-color);
+    padding-top: 1rem;
+  }
+}
+
+.nav__link {
+  color: var(--white-color);
+  background-color: var(--black-color);
+  font-weight: var(--font-semi-bold);
+  padding: 1.25rem 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: background-color 0.3s;
+}
+
+.nav__link:hover {
+  background-color: var(--black-color-light);
+}
+
+/*==========SHOW MENU========*/
+.show-menu {
+  opacity: 1;
+  top: 3.8rem;
+  pointer-events: initial;
+}
+
+/*======SHOW ICON======*/
+.show-icon .nav__burger {
+  opacity: 0;
+  transform: rotate(90deg);
+}
+
+.show-icon .nav__close {
+  opacity: 1;
+  transform: rotate(90deg);
+}
+
+/*===========DROPDOWN==========*/
+.dropdown__item {
+  cursor: pointer;
+}
+
+.dropdown__arrow {
+  font-size: 1.25rem;
+  font-weight: initial;
+  transition: transform 0.4s;
+}
+
+.dropdown__link {
+  padding: 1.25rem 1.25rem 1.25rem 2.5rem;
+  color: var(--white-color);
+  background-color: var(--black-color-light);
+  display: flex;
+  align-items: center;
+  column-gap: 0.5rem;
+  font-weight: var(--font-semi-bold);
+  transition: background-color 0.3s;
+}
+
+.dropdown__link i {
+  font-size: 1.25rem;
+  font-weight: initial;
+}
+
+.dropdown__link:hover {
+  background-color: var(--black-color);
+}
+
+.dropdown__menu {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease-out;
+}
+
+/*============SHOW DROPDOWN MENU=========*/
+.dropdown__item:hover .dropdown__menu {
+  max-height: 1000px;
+  transition: max-height 0.4s ease-in;
+}
+
+/*============rotate dropdown icon========*/
+.dropdown__item:hover .dropdown__arrow {
+  transform: rotate(180deg);
+}
+
+/*=========================BREAKS POINTS========================*/
+/*For small devices*/
+@media screen and (max-width: 340px) {
+  .container {
+    margin-inline: 1rem;
+  }
+  .nav__link {
+    padding-inline: 1rem;
+  }
+}
+
+/*FOR LARGE DEVICE*/
+@media screen and (min-width: 1118px) {
+  .container {
+    margin-inline: auto;
+  }
+
+  .nav {
+    height: calc(var(--header-height) + 0.3rem);
+    display: flex;
+    justify-content: space-between;
+  }
+  .nav__toggle {
+    display: none;
+  }
+  .nav__list {
+    height: 100%;
+    display: flex;
+    column-gap: 3rem;
+  }
+  .nav__link {
+    height: 100%;
+    padding: 0;
+    justify-content: initial;
+    column-gap: 0.25rem;
+  }
+
+  .nav__link {
+    position: relative; /* Necesario para que ::after se posicione correctamente */
+    text-decoration: none; /* Evita subrayado predeterminado */
+    color: white;
+    padding-bottom: 5px; /* Espacio para la línea */
+  }
+
+  .nav__link:hover {
+    color: aqua;
+  }
+
+  .nav__link::after {
+    content: ""; /* Genera el elemento */
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0%; /* Comienza invisible */
+    height: 4px; /* Grosor de la línea */
+    background-color: white; /* Color de la línea */
+    transition: width 0.3s ease-in-out; /* Efecto de animación */
+  }
+
+  .nav__link:hover::after {
+    width: 100%; /* Se expande al 100% cuando el cursor pasa */
+  }
+
+  .dropdown__item {
+    position: relative;
+  }
+  .dropdown__menu {
+    max-height: initial;
+    overflow: initial;
+    position: absolute;
+    left: 0;
+    top: 6rem;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s, top 0.3s;
+  }
+
+  .dropdown__link {
+    padding-inline: 1rem 1rem;
+  }
+
+  /*show dropdown menu*/
+  .dropdown__item:hover .dropdown__menu {
+    opacity: 1;
+    top: 3.9rem;
+    width: 170px;
+    pointer-events: initial;
+    transition: top 0.3s;
+    padding: 0;
+    border: 0;
+    position: absolute;
+  }
+  /*animation links*/
+  .logos-topbar {
+    width: max-content; /* Se ajusta al tamaño del contenido */
+    margin: 0 auto; /* Centra horizontalmente */
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .logo-topbar {
+    max-width: 45px;
+  }
+
+  .mangla-topbar {
+    max-width: 80px;
+    position: relative;
+  }
+
+  .gnius:hover p {
+    cursor: text;
+  }
+}
