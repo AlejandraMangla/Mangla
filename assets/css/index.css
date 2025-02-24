@@ -89,11 +89,11 @@
   padding: 17px;
   margin: 40px;
   font-weight: bolder;
-  border: 2px solid transparent;
+  border: 2px solid white;
 }
 
 .boton_unete:hover {
   background-color: black;
-  color: aqua;
-  border: 2px solid white;
+  color: white;
+  border: 2px solid aqua;
 }
