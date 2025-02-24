@@ -1,0 +1,61 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.inicio-parte1 {
+  background-image: url(../images/Fondos/Fondo\ Inicio.jpg);
+  min-height: 100vh;
+  width: 100%;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 10px;
+  color: white;
+  text-align: center;
+  justify-items: center; /* Centra el contenido de cada columna */
+}
+
+.descripcion img {
+  min-width: 100px;
+  max-width: 275px;
+}
+
+.logo img {
+  max-width: 250px;
+}
+
+.descripcion,
+.logo {
+  width: 65%; /* Se ajusta al ancho de la columna */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 2;
+}
+
+.inicio-parte1::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: black;
+  opacity: 0.35;
+  z-index: 1; /* Manda la capa al fondo para evitar interferencias */
+}
+
+/* Responsive para pantallas pequeñas */
+@media (max-width: 768px) {
+  .inicio-parte1 {
+    grid-template-columns: 1fr; /* Una sola columna en móviles */
+    text-align: center;
+  }
+}
