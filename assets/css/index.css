@@ -28,12 +28,14 @@
   gap: 10px;
   color: white;
   text-align: center;
-  justify-items: center; /* Centra el contenido de cada columna */
+  justify-items: center;
 }
 
 .descripcion img {
   min-width: 100px;
   max-width: 275px;
+  margin-top: 15px;
+  margin-bottom: 15px;
 }
 
 .logo img {
@@ -42,7 +44,7 @@
 
 .descripcion,
 .logo {
-  width: 65%; /* Se ajusta al ancho de la columna */
+  width: 65%;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -60,13 +62,13 @@
   height: 100%;
   background-color: black;
   opacity: 0.35;
-  z-index: 1; /* Manda la capa al fondo para evitar interferencias */
+  z-index: 1;
 }
 
 /* Responsive para pantallas pequeñas */
 @media (max-width: 768px) {
   .inicio-parte1 {
-    grid-template-columns: 1fr; /* Una sola columna en móviles */
+    grid-template-columns: 1fr;
     text-align: center;
   }
 }
