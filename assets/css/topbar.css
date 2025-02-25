@@ -161,14 +161,14 @@ a {
 }
 
 .iniciar_sesion:hover {
-  color: white;
-  background-color: rgb(80, 80, 00);
+  color: black;
+  background-color: aqua;
   border: 2px solid transparent;
 }
 
 .registro {
-  color: white;
-  background-color: rgb(80, 80, 00);
+  color: black;
+  background-color: aqua;
   font-weight: var(--font-semi-bold);
   border: 1rem 0.5rem;
   padding: 0.75rem 3rem;
@@ -181,8 +181,8 @@ a {
 }
 
 .registro:hover {
-  color: rgb(80, 80, 00);
-  background-color: white;
+  color: aqua;
+  background-color: black;
   border-color: white;
 }
 

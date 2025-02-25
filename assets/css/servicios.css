@@ -64,14 +64,6 @@
   font-family: "Monse", sans-serif;
 }
 
-/* Responsive para pantallas pequeñas */
-@media (max-width: 768px) {
-  .parte1 {
-    grid-template-columns: 1fr;
-    text-align: center;
-  }
-}
-
 .container_gratis,
 .container_premium {
   font-family: "Monserrat", sans-serif;
@@ -94,5 +86,19 @@
 .division {
   width: 2px;
   height: 50vh;
-  background-color: rgb(80, 80, 00);
+  background-color: aqua;
+}
+
+/* Responsive para pantallas pequeñas */
+@media (max-width: 768px) {
+  .parte1 {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+  .division {
+    height: 2px;
+    width: 30vh;
+    padding: 0;
+    margin: 0;
+  }
 }
