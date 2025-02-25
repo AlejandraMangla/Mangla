@@ -92,7 +92,7 @@
 /* Responsive para pantallas pequeñas */
 @media (max-width: 768px) {
   .parte1 {
-    grid-template-columns: 1fr;
+    grid-template-columns: auto;
     text-align: center;
   }
   .division {
