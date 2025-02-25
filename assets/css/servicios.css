@@ -89,6 +89,17 @@
   background-color: aqua;
 }
 
+.inscribete {
+  background-color: aqua;
+  color: black;
+  padding: 5px 30px;
+  border-radius: 30px;
+  font-weight: bolder;
+  margin: 20px;
+  font-size: 20px;
+  border: 2px;
+}
+
 /* Responsive para pantallas pequeñas */
 @media (max-width: 768px) {
   .parte1 {
@@ -102,3 +113,5 @@
     margin: 0;
   }
 }
+
+/*----------------------PARTE 2------------------*/
