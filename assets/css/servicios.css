@@ -1,11 +1,97 @@
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.parte1{
-    background-image: url("../images/Fondos/fondo1_servicios.jpeg");
-    width: 100%;
-    height: 100vh;
+:root {
+  /*----------IMPORTANDO TIPOGRAFIAS---------*/
+  /*--------MONSERRAT------------*/
+  @font-face {
+    font-family: "Monse";
+    src: url("../tipografias/Monserrat/Montserrat-VariableFont_wght.ttf")
+      format("truetype");
+  }
+}
+
+.parte1 {
+  background-image: url("../images/Fondos/fondo1_servicios.jpeg");
+  width: 100%;
+  height: 100vh;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  align-items: center;
+  gap: 10px;
+  color: white;
+  text-align: center;
+  justify-items: center;
+}
+
+.parte1::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: black;
+  opacity: 0.35;
+  z-index: 1;
+}
+
+.container_gratis,
+.container_premium {
+  width: 75%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 2;
+  font-family: "Monse", sans-serif;
+}
+
+.division {
+  width: 5%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 2;
+  font-family: "Monse", sans-serif;
+}
+
+/* Responsive para pantallas pequeñas */
+@media (max-width: 768px) {
+  .parte1 {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+}
+
+.container_gratis,
+.container_premium {
+  font-family: "Monserrat", sans-serif;
+}
+
+.container_gratis h2,
+.container_premium h2 {
+  font-size: 75px;
+}
+
+.container_gratis img {
+  max-width: 30px;
+}
+
+.container_gratis p {
+  text-align: left;
+}
+
+.division {
+  width: 2px;
+  height: 50vh;
+  background-color: aqua;
 }

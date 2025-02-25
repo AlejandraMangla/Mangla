@@ -36,7 +36,7 @@
 
 header {
   margin-top: 20px;
-  margin-bottom: 50PX;
+  margin-bottom: 50px;
   font-family: var(--body-font);
   font-size: var(--normal-font-size);
   background-color: var(--body-color);
@@ -304,8 +304,6 @@ a {
 
   .nav__link:hover {
     color: aqua;
-    background-color: black;
-    opacity: 0.5;
   }
 
   .nav__link::after {
