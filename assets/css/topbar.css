@@ -36,6 +36,7 @@
 
 header {
   margin-top: 20px;
+  margin-bottom: 50PX;
   font-family: var(--body-font);
   font-size: var(--normal-font-size);
   background-color: var(--body-color);
@@ -297,10 +298,14 @@ a {
     text-decoration: none; /* Evita subrayado predeterminado */
     color: white;
     padding-bottom: 5px; /* Espacio para la línea */
+    padding-left: 5px;
+    padding-right: 5px;
   }
 
   .nav__link:hover {
     color: aqua;
+    background-color: black;
+    opacity: 0.5;
   }
 
   .nav__link::after {
