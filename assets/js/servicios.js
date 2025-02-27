@@ -73,3 +73,59 @@ const config2 = {
 };
 
 const myChart2 = new Chart(ctx2, config2);
+
+
+//----------------grafico 3 pastel-------------------------
+const ctx3 = document.getElementById("chart4").getContext("2d"); 
+
+ 
+
+const miGrafico = new Chart(ctx3, { 
+
+  type: "pie", // Gráfico de pastel 
+
+  data: { 
+
+    labels: ["biodiversidad", "deforestación", "Manglares", "Aire"], 
+
+    datasets: [ 
+
+      { 
+
+        data: [5.3, 20.3, 37.2, 37.2], // Valores de cada sección 
+
+        backgroundColor: ["#60ª5FA", "#0F172A", "#14B8A6", "#0284C7"], // Colores 
+
+        borderColor: "#ffffff", 
+
+        borderWidth: 2, 
+
+      }, 
+
+    ], 
+
+  }, 
+
+  options: { 
+
+    responsive: true, 
+
+    plugins: { 
+
+      legend: { 
+
+        Display: false, // Oculta la leyenda predeterminada 
+
+      }, 
+
+      tooltip: { 
+
+        enabled: true, // Muestra información al pasar el mouse 
+
+      }, 
+
+    }, 
+
+  }, 
+
+}); 
