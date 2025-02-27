@@ -39,7 +39,6 @@ header {
   margin-bottom: 50px;
   font-family: var(--body-font);
   font-size: var(--normal-font-size);
-  background-color: var(--body-color);
 }
 
 ul {

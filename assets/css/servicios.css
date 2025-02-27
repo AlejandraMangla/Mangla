@@ -198,10 +198,11 @@
   align-items: center;
   gap: 5px;
   justify-items: center;
-  background-color: aliceblue;
-  padding: 5px;
-  background: opacity 0.1;
-  border-radius: 5px;
+  padding: 10px;
+  background: rgba(255, 255, 255, 0.1); /* Color con transparencia */
+  backdrop-filter: blur(10px); /* Difuminado */
+  -webkit-backdrop-filter: blur(10px); /* Para Safari */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra ligera */
 }
 
 /*-------------------RESPONSIVE----------------*/
