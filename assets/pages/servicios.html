@@ -170,7 +170,84 @@
       </div>
     </section>
     <section class="containerp3">
-      
+      <div class="parte3">
+        <br><br><br><br><br><br><br><br>
+        <div class="oxigeno">
+          <h2>Oxígeno</h2>
+        </div>
+        <div class="containerparte3">
+          <div class="oxigenoinfo">
+            <h3>Producción de oxígeno promedio diario: </h3><br>
+            <p>Aproximadamente 0.5 a 1.5 g O₂/m²/día</p>
+          </div>
+          <div class="grficooxigeno" id="chart-container1">
+            <canvas id="myChart1"></canvas>
+          </div>
+        </div>
+        <div class="mangla">
+          <img src="../images/Mangla/tipografia Mangla.png" alt="Mangla">
+        </div>
+      </div>
     </section>
+    <section class="containerp4">
+      <div class="parte4">
+        <br><br><br><br><br><br><br><br>
+        <div class="co2">
+          <h2>CO2</h2>
+        </div>
+        <div class="containerparte4">
+          <div class="co2info">
+            <h3>Producción promedio: </h3><br>
+            <p>Aproximadamente 0.5 a 2.0 g CO₂/m²/día.</p>
+          </div>
+          <div class="c" id="chart-container2">
+            <canvas id="myChart2"></canvas>
+          </div>
+        </div>
+        <div class="mangla">
+          <img src="../images/Mangla/tipografia Mangla.png" alt="Mangla">
+        </div>
+      </div>
+    </section>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="">
+      const ctx = document.getElementById("myChart1").getContext("2d");
+
+const data = {
+  labels: ["Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Hoy"],
+  datasets: [
+    {
+      label: "Valores",
+      data: [1.5, 1.2, 1.8, 1.3, 1.6, 2.0], // Aquí se actualizarán los datos
+      backgroundColor: "rgba(0, 255, 255, 0.8)", // Color de las barras
+      borderWidth: 0,
+    },
+  ],
+};
+
+const config = {
+  type: "bar",
+  data: data,
+  options: {
+    indexAxis: "y", // Esto hace que las barras sean horizontales
+    responsive: true,
+    scales: {
+      x: {
+        beginAtZero: true,
+        ticks: { color: "white" }, // Color de los números del eje X
+      },
+      y: {
+        ticks: { color: "white" }, // Color de las etiquetas del eje Y
+      },
+    },
+    plugins: {
+      legend: { display: false }, // Oculta la leyenda
+    },
+  },
+};
+
+const myChart = new Chart(ctx, config);
+
+    </script>    
   </body>
 </html>
