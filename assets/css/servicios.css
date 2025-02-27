@@ -260,7 +260,7 @@
 }
 
 .oxigeno,
-.co2 {
+.co2,.comparativa {
   position: relative;
   color: white;
   z-index: 2;
@@ -274,7 +274,7 @@
 }
 
 .oxigeno h2,
-.co2 h2 {
+.co2 h2,.comparativa h2 {
   font-size: 45px;
 }
 

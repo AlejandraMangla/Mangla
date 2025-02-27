@@ -74,15 +74,12 @@ const config2 = {
 
 const myChart2 = new Chart(ctx2, config2);
 
+//----------------grafico 4 pastel-------------------------
+const ctx3 = document.getElementById("chart3").getContext("2d"); 
 
-//----------------grafico 3 pastel-------------------------
-const ctx3 = document.getElementById("chart4").getContext("2d"); 
+const miGrafico1 = new Chart(ctx3, { 
 
- 
-
-const miGrafico = new Chart(ctx3, { 
-
-  type: "pie", // Gráfico de pastel 
+  type: "pie", 
 
   data: { 
 
@@ -92,9 +89,9 @@ const miGrafico = new Chart(ctx3, {
 
       { 
 
-        data: [5.3, 20.3, 37.2, 37.2], // Valores de cada sección 
+        data: [14.3, 19, 33.3, 33.3], 
 
-        backgroundColor: ["#60ª5FA", "#0F172A", "#14B8A6", "#0284C7"], // Colores 
+        backgroundColor: ["#60A5FA", "#0F172A", "#14B8A6", "#0284C7"], 
 
         borderColor: "#ffffff", 
 
@@ -114,13 +111,122 @@ const miGrafico = new Chart(ctx3, {
 
       legend: { 
 
-        Display: false, // Oculta la leyenda predeterminada 
+        display: false, // Ocultar leyenda tradicional 
 
       }, 
 
       tooltip: { 
 
-        enabled: true, // Muestra información al pasar el mouse 
+        enabled: true, 
+
+      }, 
+
+      datalabels: { 
+
+        color: "#ffffff", // Color del texto 
+
+        font: { 
+
+          weight: "bold", 
+
+          size: 12, 
+
+        }, 
+
+        formatter: (value, context) => { 
+
+          let label = context.chart.data.labels[context.dataIndex]; 
+
+          return label + "\n" + value + "%"; // Formato de la etiqueta 
+
+        }, 
+
+        anchor: "end", // Ubicación del texto 
+
+        align: "start", 
+
+        offset: -10, // Ajustar la posición de las etiquetas 
+
+      }, 
+
+    }, 
+
+  }, 
+
+}); 
+
+//----------------grafico 4 pastel-------------------------
+const ctx4 = document.getElementById("chart4").getContext("2d"); 
+
+const miGrafico = new Chart(ctx4, { 
+
+  type: "pie", 
+
+  data: { 
+
+    labels: ["biodiversidad", "deforestación", "Manglares", "Aire"], 
+
+    datasets: [ 
+
+      { 
+
+        data: [5.3, 20.3, 37.2, 37.2], 
+
+        backgroundColor: ["#60A5FA", "#0F172A", "#14B8A6", "#0284C7"], 
+
+        borderColor: "#ffffff", 
+
+        borderWidth: 2, 
+
+      }, 
+
+    ], 
+
+  }, 
+
+  options: { 
+
+    responsive: true, 
+
+    plugins: { 
+
+      legend: { 
+
+        display: false, // Ocultar leyenda tradicional 
+
+      }, 
+
+      tooltip: { 
+
+        enabled: true, 
+
+      }, 
+
+      datalabels: { 
+
+        color: "#ffffff", // Color del texto 
+
+        font: { 
+
+          weight: "bold", 
+
+          size: 12, 
+
+        }, 
+
+        formatter: (value, context) => { 
+
+          let label = context.chart.data.labels[context.dataIndex]; 
+
+          return label + "\n" + value + "%"; // Formato de la etiqueta 
+
+        }, 
+
+        anchor: "end", // Ubicación del texto 
+
+        align: "start", 
+
+        offset: -10, // Ajustar la posición de las etiquetas 
 
       }, 
 
