@@ -260,7 +260,7 @@
 }
 
 .oxigeno,
-.co2,.comparativa {
+.co2 {
   position: relative;
   color: white;
   z-index: 2;
@@ -274,7 +274,8 @@
 }
 
 .oxigeno h2,
-.co2 h2,.comparativa h2 {
+.co2 h2,
+.comparativa h2 {
   font-size: 45px;
 }
 
@@ -335,6 +336,7 @@
   background-repeat: no-repeat;
   position: relative;
   font-family: "Monse", sans-serif;
+  align-items: center;
 }
 
 .parte5::before {
@@ -361,12 +363,26 @@
   z-index: 2;
   padding-left: 60px;
 }
-
 .comparativa {
   position: relative;
-  z-index: 2;
   color: white;
+  z-index: 2;
+  background-color: rgb(1, 52, 64);
+  border-radius: 15px;
+  height: 85px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 400px;
+  margin: auto;
 }
+
+.mespasado {
+  position: relative;
+  justify-content: center;
+  align-items: center;
+}
+
 /*-------------------RESPONSIVE----------------*/
 /* Responsive para pantallas pequeñas */
 @media (max-width: 768px) {

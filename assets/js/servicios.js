@@ -7,7 +7,7 @@ const data = {
     {
       label: "Valores",
       data: [1.5, 1.2, 1.8, 1.3, 1.6, 2.0], // Aquí se actualizarán los datos
-      backgroundColor: "rgba(0, 255, 255, 0.8)", // Color de las barras
+      backgroundColor: "rgba(0, 255, 255, 1)", // Color de las barras
       borderWidth: 0,
     },
   ],
@@ -45,7 +45,7 @@ const data2 = {
     {
       label: "Valores",
       data: [0.0, 0.2, 0.4, 0.6, 0.8, 1, 1.2, 1.4], // Aquí se actualizarán los datos
-      backgroundColor: "rgba(0, 255, 255, 0.8)", // Color de las barras
+      backgroundColor: "rgba(0, 255, 255, 1)", // Color de las barras
       borderWidth: 0,
     },
   ],
@@ -75,163 +75,119 @@ const config2 = {
 const myChart2 = new Chart(ctx2, config2);
 
 //----------------grafico 4 pastel-------------------------
-const ctx3 = document.getElementById("chart3").getContext("2d"); 
+const ctx3 = document.getElementById("chart3").getContext("2d");
 
-const miGrafico1 = new Chart(ctx3, { 
+const miGrafico1 = new Chart(ctx3, {
+  type: "pie",
 
-  type: "pie", 
+  data: {
+    labels: ["biodiversidad", "deforestación", "Manglares", "Aire"],
 
-  data: { 
+    datasets: [
+      {
+        data: [14.3, 19, 33.3, 33.3],
 
-    labels: ["biodiversidad", "deforestación", "Manglares", "Aire"], 
+        backgroundColor: ["#60A5FA", "#0F172A", "#14B8A6", "#0284C7"],
 
-    datasets: [ 
+        borderColor: "#ffffff",
 
-      { 
+        borderWidth: 2,
+      },
+    ],
+  },
 
-        data: [14.3, 19, 33.3, 33.3], 
+  options: {
+    responsive: true,
 
-        backgroundColor: ["#60A5FA", "#0F172A", "#14B8A6", "#0284C7"], 
+    plugins: {
+      legend: {
+        display: false, // Ocultar leyenda tradicional
+      },
 
-        borderColor: "#ffffff", 
+      tooltip: {
+        enabled: true,
+      },
 
-        borderWidth: 2, 
+      datalabels: {
+        color: "#ffffff", // Color del texto
 
-      }, 
+        font: {
+          weight: "bold",
 
-    ], 
+          size: 12,
+        },
 
-  }, 
+        formatter: (value, context) => {
+          let label = context.chart.data.labels[context.dataIndex];
 
-  options: { 
+          return label + "\n" + value + "%"; // Formato de la etiqueta
+        },
 
-    responsive: true, 
+        anchor: "end", // Ubicación del texto
 
-    plugins: { 
+        align: "start",
 
-      legend: { 
-
-        display: false, // Ocultar leyenda tradicional 
-
-      }, 
-
-      tooltip: { 
-
-        enabled: true, 
-
-      }, 
-
-      datalabels: { 
-
-        color: "#ffffff", // Color del texto 
-
-        font: { 
-
-          weight: "bold", 
-
-          size: 12, 
-
-        }, 
-
-        formatter: (value, context) => { 
-
-          let label = context.chart.data.labels[context.dataIndex]; 
-
-          return label + "\n" + value + "%"; // Formato de la etiqueta 
-
-        }, 
-
-        anchor: "end", // Ubicación del texto 
-
-        align: "start", 
-
-        offset: -10, // Ajustar la posición de las etiquetas 
-
-      }, 
-
-    }, 
-
-  }, 
-
-}); 
+        offset: -10, // Ajustar la posición de las etiquetas
+      },
+    },
+  },
+});
 
 //----------------grafico 4 pastel-------------------------
-const ctx4 = document.getElementById("chart4").getContext("2d"); 
+const ctx4 = document.getElementById("chart4").getContext("2d");
 
-const miGrafico = new Chart(ctx4, { 
+const miGrafico = new Chart(ctx4, {
+  type: "pie",
 
-  type: "pie", 
+  data: {
+    labels: ["biodiversidad", "deforestación", "Manglares", "Aire"],
 
-  data: { 
+    datasets: [
+      {
+        data: [5.3, 20.3, 37.2, 37.2],
 
-    labels: ["biodiversidad", "deforestación", "Manglares", "Aire"], 
+        backgroundColor: ["#60A5FA", "#0F172A", "#14B8A6", "#0284C7"],
 
-    datasets: [ 
+        borderColor: "#ffffff",
 
-      { 
+        borderWidth: 2,
+      },
+    ],
+  },
 
-        data: [5.3, 20.3, 37.2, 37.2], 
+  options: {
+    responsive: true,
 
-        backgroundColor: ["#60A5FA", "#0F172A", "#14B8A6", "#0284C7"], 
+    plugins: {
+      legend: {
+        display: false, // Ocultar leyenda tradicional
+      },
 
-        borderColor: "#ffffff", 
+      tooltip: {
+        enabled: true,
+      },
 
-        borderWidth: 2, 
+      datalabels: {
+        color: "#ffffff", // Color del texto
 
-      }, 
+        font: {
+          weight: "bold",
 
-    ], 
+          size: 12,
+        },
 
-  }, 
+        formatter: (value, context) => {
+          let label = context.chart.data.labels[context.dataIndex];
 
-  options: { 
+          return label + "\n" + value + "%"; // Formato de la etiqueta
+        },
 
-    responsive: true, 
+        anchor: "end", // Ubicación del texto
 
-    plugins: { 
+        align: "start",
 
-      legend: { 
-
-        display: false, // Ocultar leyenda tradicional 
-
-      }, 
-
-      tooltip: { 
-
-        enabled: true, 
-
-      }, 
-
-      datalabels: { 
-
-        color: "#ffffff", // Color del texto 
-
-        font: { 
-
-          weight: "bold", 
-
-          size: 12, 
-
-        }, 
-
-        formatter: (value, context) => { 
-
-          let label = context.chart.data.labels[context.dataIndex]; 
-
-          return label + "\n" + value + "%"; // Formato de la etiqueta 
-
-        }, 
-
-        anchor: "end", // Ubicación del texto 
-
-        align: "start", 
-
-        offset: -10, // Ajustar la posición de las etiquetas 
-
-      }, 
-
-    }, 
-
-  }, 
-
-}); 
+        offset: -10, // Ajustar la posición de las etiquetas
+      },
+    },
+  },
+});
