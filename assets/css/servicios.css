@@ -217,14 +217,14 @@
   font-family: "Monse", sans-serif;
 }
 
-#chart-container1,
+#chart-container,
 #chart-container2 {
   position: relative;
   width: 500px; /* Ajusta según necesidad */
   height: 300px;
 }
 
-#myChart1,
+#myChart,
 #myChart2 {
   top: 0;
   left: 0;
