@@ -191,3 +191,29 @@ const miGrafico = new Chart(ctx4, {
     },
   },
 });
+
+
+//--------------CENTRAR SECCIONES------------------//
+document.addEventListener("DOMContentLoaded", () => {
+  const sections = document.querySelectorAll("section");
+
+  const observer = new IntersectionObserver(
+      (entries) => {
+          entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                  entry.target.scrollIntoView({
+                      behavior: "smooth",
+                      block: "center",
+                      inline: "nearest"
+                  });
+              }
+          });
+      },
+      {
+          root: null, // Usa la ventana como área de observación
+          threshold: 0.6 // Detecta cuando el 60% de la sección está visible
+      }
+  );
+
+  sections.forEach((section) => observer.observe(section));
+});
