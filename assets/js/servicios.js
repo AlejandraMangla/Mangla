@@ -44,7 +44,7 @@ const data2 = {
   datasets: [
     {
       label: "Valores",
-      data: [0.0, 0.2, 0.4, 0.6, 0.8, 1, 1.2, 1.4], // Aquí se actualizarán los datos
+      data: [0.4, 0.2, 0.4, 0.6, 1, 1.4], // Aquí se actualizarán los datos
       backgroundColor: "rgba(0, 255, 255, 1)", // Color de las barras
       borderWidth: 0,
     },
@@ -192,27 +192,26 @@ const miGrafico = new Chart(ctx4, {
   },
 });
 
-
 //--------------CENTRAR SECCIONES------------------//
 document.addEventListener("DOMContentLoaded", () => {
   const sections = document.querySelectorAll("section");
 
   const observer = new IntersectionObserver(
-      (entries) => {
-          entries.forEach((entry) => {
-              if (entry.isIntersecting) {
-                  entry.target.scrollIntoView({
-                      behavior: "smooth",
-                      block: "center",
-                      inline: "nearest"
-                  });
-              }
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.scrollIntoView({
+            behavior: "smooth",
+            block: "center",
+            inline: "nearest",
           });
-      },
-      {
-          root: null, // Usa la ventana como área de observación
-          threshold: 0.6 // Detecta cuando el 60% de la sección está visible
-      }
+        }
+      });
+    },
+    {
+      root: null, // Usa la ventana como área de observación
+      threshold: 0.6, // Detecta cuando el 60% de la sección está visible
+    }
   );
 
   sections.forEach((section) => observer.observe(section));

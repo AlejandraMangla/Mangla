@@ -129,7 +129,9 @@ a {
     transition: top 0.4s, opacity 0.3s;
   }
   .nav__list {
-    background-color: var(--black-color);
+    background: rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(4px);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     padding-top: 1rem;
   }
 }
